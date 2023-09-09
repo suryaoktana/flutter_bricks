@@ -1,0 +1,23 @@
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../{{name.snakeCase()}}.dart';
+
+part '{{name.snakeCase()}}_event.dart';
+
+part '{{name.snakeCase()}}_state.dart';
+
+class {{name.pascalCase()}}Bloc extends Bloc<{{name.pascalCase()}}Event, {{name.pascalCase()}}State> {
+  {{name.pascalCase()}}Bloc({required {{name.pascalCase()}}Repository {{name.camelCase()}}Repository})
+      : _{{name.camelCase()}}Repository = {{name.camelCase()}}Repository,
+        super(const {{name.pascalCase()}}State()) {
+    on<EventPlaceholder>(_onEventPlaceholder);
+  }
+
+  final {{name.pascalCase()}}Repository _{{name.camelCase()}}Repository;
+
+  void _onEventPlaceholder(EventPlaceholder event, Emitter<{{name.pascalCase()}}State> emit) {
+    emit(state.copyWith(
+      statePlaceholder: 'placeholder',
+    ));
+  }
+}
