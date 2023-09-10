@@ -10,5 +10,6 @@ class {{name.pascalCase()}}Screen extends StatelessWidget {
     return const Placeholder();
   }
 
-  static void open(BuildContext context) => Navigator.pushNamed(context, route);
+  static Future<void> open(BuildContext context) async =>
+      Navigator.pushNamed(context, route);
 }
